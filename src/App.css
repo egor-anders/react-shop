@@ -1,42 +1,67 @@
+nav {
+  padding-inline: 40px;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  background-color: #fff;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-title {
+  color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.card-action {
+  color: black;
 }
+
 
 .card {
-  padding: 2em;
+  display: grid;
+  grid-template-rows: 200px 1fr max-content;
+  gap: 20px;
+  padding: 40px 15px 0;
 }
 
-.read-the-docs {
-  color: #888;
+.card-image img {
+  height: 100%;
+  object-fit: contain;
+  width: auto;
+}
+
+.content {
+  display: grid;
+  min-height: 100vh;
+  height: 100%;
+  grid-template-rows: max-content 1fr max-content;
+}
+
+.cards-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-block: 50px;
+}
+
+
+.progress {
+  margin-block: 20px;
+}
+
+.search.input-field.inline {
+ position: relative;
+ width: 100%;
+}
+
+.search button {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+label:not(:last-child) {
+  margin-right: 1rem;
 }
