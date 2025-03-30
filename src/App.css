@@ -65,3 +65,35 @@ body {
 label:not(:last-child) {
   margin-right: 1rem;
 }
+
+
+.cart-icon {
+  background-color: #1976d2;
+  color: #fff;
+  position: fixed;
+  right: 4rem;
+  top: 5rem;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.cart-icon span {
+  font-size: 20px;
+
+}
+
+.cart-icon i {
+  font-size: 40px;
+
+}
+
+
+
+@media (width < 1000px) {
+  .cart-icon {
+    top: unset;
+    right: 2rem;
+    bottom: 2rem;
+    z-index: 10;
+  }
+}

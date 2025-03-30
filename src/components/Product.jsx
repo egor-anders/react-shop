@@ -1,4 +1,17 @@
+import { useContext } from "react";
+import CartContext from './../context/CartContext';
+
 function Product({ title, image, price }) {
+  const {addToCart = () => {}} = useContext(CartContext);
+
+  const handleClick = () => {
+    console.log(123)
+    addToCart({
+        title,
+        price
+    })
+  }
+
   return (
     <li className="card">
       <div className="card-image">
@@ -9,7 +22,7 @@ function Product({ title, image, price }) {
       </div>
       <div className="card-action">
         <span style={{fontSize: '24px'}}>{price}$</span>
-        <button className="right">Buy</button>
+        <button onClick={handleClick} className="right blue darken-2 waves-effect waves-light btn">Buy</button>
       </div>
     </li>
   );

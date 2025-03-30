@@ -1,8 +1,8 @@
 function Header() {
   return (
-    <header className="blue-grey darken-2">
-      <nav className="blue-grey darken-2">
-        <div className="nav-wrapper blue-grey darken-2">
+    <header className="blue darken-2">
+      <nav className="blue darken-2">
+        <div className="nav-wrapper blue darken-2">
           <a href="" className="brand-logo">
             Project Shop
           </a>
