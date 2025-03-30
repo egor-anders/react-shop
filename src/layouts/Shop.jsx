@@ -21,12 +21,10 @@ function Shop() {
       });
   }, []);
 
-  const value = {
-    addToCart: (order) => {
-      console.log('shop')
-      setOrderList([...orderList, order]);
-    }
-  }
+  const addToCart = (order) => {
+    console.log('shop')
+    setOrderList([...orderList, order]);
+  };
 
   return (
     <main>
@@ -34,7 +32,7 @@ function Shop() {
         {loading ? (
           <Preloader />
         ) : (
-          <CartContext.Provider value={value}>
+          <CartContext.Provider value={{addToCart}}>
             <Cart quantity={orderList.length} />
             <Products products={products} />
           </CartContext.Provider>
