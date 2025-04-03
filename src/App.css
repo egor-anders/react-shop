@@ -77,6 +77,11 @@ label:not(:last-child) {
   border-radius: 3px;
 }
 
+#toast-container {
+  top: 2rem;
+  right: 10rem;
+}
+
 .cart-icon span {
   font-size: 20px;
 
@@ -88,6 +93,10 @@ label:not(:last-child) {
 }
 
 
+nav .brand-logo {
+  width: max-content;
+}
+
 
 @media (width < 1000px) {
   .cart-icon {
@@ -95,5 +104,131 @@ label:not(:last-child) {
     right: 2rem;
     bottom: 2rem;
     z-index: 10;
+  }
+
+  #toast-container {
+    top: unset;
+    bottom: 4.5rem;
+    right: 10rem;
+  }
+  
+}
+
+.cart-wrapper {
+  color: black;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  box-shadow: 0 0 0 #000;
+  border: none;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.38);
+  animation: showBasket 0.3s ease;
+}
+
+.cart-list {
+  margin-block: 0;
+}
+
+.cart-item {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 20px;
+}
+
+.cart-delete {
+  margin-left: auto;
+}
+
+.cart-controls {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  margin-bottom: 5px;
+  gap: 15px;
+}
+
+.cart-control {
+  font-size: 24px;
+  line-height: 100%;
+  height: fit-content;
+  color: #1976d2;
+  font-weight: 700;
+  padding: 10px;
+}
+
+
+.btn-flat:focus {
+  background: transparent;
+}
+
+.cart-item p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 10px;
+}
+
+.cart-delete {
+  background-color: transparent;
+  color: #1e88e5;
+}
+
+.cart-total {
+  font-size: 28px;
+  padding: 20px !important;
+}
+
+.cart-close {
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  width: fit-content;
+  height: fit-content;
+}
+
+button:active {
+  background-color: unset;
+}
+
+.cart-close:hover {
+  border-color: transparent;
+}
+
+
+@media (width < 900px) {
+ 
+  .cart-wrapper {
+    max-width: 91%;
+  }
+}
+
+@media (width < 430px) {
+  .cart-item {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .cart-delete {
+    margin-left: 0;
+  }
+}
+
+@keyframes showBasket {
+  from {
+    top: 30%;
+    opacity: 0;
+  }
+
+  to {
+    top: 50%;
+    opacity: 1;
   }
 }

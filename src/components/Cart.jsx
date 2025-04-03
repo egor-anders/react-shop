@@ -1,10 +1,10 @@
-function Cart({quantity}) {
+function Cart({quantity, toggleShowCart}) {
 
   return (
-    <div className="cart-icon">
+    <button className="cart-icon" onClick={toggleShowCart}>
         <i className="material-icons">shopping_cart</i>
         {quantity ? <span className="cart-quantity">{quantity}</span> : null}
-    </div>
+    </button>
   )
 }
 

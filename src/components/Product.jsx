@@ -1,15 +1,16 @@
 import { useContext } from "react";
 import CartContext from './../context/CartContext';
 
-function Product({ title, image, price }) {
-  const {addToCart = () => {}} = useContext(CartContext);
+function Product({id, title, image, price }) {
+  const {addToCart = Function.prototype, openAlert= Function.prototype} = useContext(CartContext);
 
   const handleClick = () => {
-    console.log(123)
     addToCart({
+        id,
         title,
         price
     })
+    openAlert(title)
   }
 
   return (
