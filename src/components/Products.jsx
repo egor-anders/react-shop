@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import Product from "./Product";
+import ShopContext from "../context/ShopContext";
 
-function Products({ products }) {
+function Products() {
+  const { products } = useContext(ShopContext);
   return (
     <>
       {products.length ? (

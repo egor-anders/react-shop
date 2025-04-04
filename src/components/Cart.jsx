@@ -1,4 +1,8 @@
-function Cart({quantity, toggleShowCart}) {
+import { useContext } from "react"
+import ShopContext from "../context/ShopContext"
+
+function Cart({quantity}) {
+  const {toggleShowCart} = useContext(ShopContext)
 
   return (
     <button className="cart-icon" onClick={toggleShowCart}>

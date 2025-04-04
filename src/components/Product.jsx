@@ -2,7 +2,7 @@ import { useContext } from "react";
 import ShopContext from './../context/ShopContext';
 
 function Product({id, title, image, price }) {
-  const {addToCart = Function.prototype, openAlert= Function.prototype} = useContext(ShopContext);
+  const {addToCart = Function.prototype} = useContext(ShopContext);
 
   const handleClick = () => {
     addToCart({
@@ -10,7 +10,6 @@ function Product({id, title, image, price }) {
         title,
         price
     })
-    openAlert(title)
   }
 
   return (

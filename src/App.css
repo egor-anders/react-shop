@@ -80,6 +80,7 @@ label:not(:last-child) {
 #toast-container {
   top: 2rem;
   right: 10rem;
+  animation: showAlert 0.3s ease;
 }
 
 .cart-icon span {
@@ -110,6 +111,7 @@ nav .brand-logo {
     top: unset;
     bottom: 4.5rem;
     right: 10rem;
+    animation: none;
   }
   
 }
@@ -206,6 +208,7 @@ button:active {
  
   .cart-wrapper {
     max-width: 91%;
+    animation: none;
   }
 }
 
@@ -229,6 +232,18 @@ button:active {
 
   to {
     top: 50%;
+    opacity: 1;
+  }
+}
+
+@keyframes showAlert {
+  from {
+    top: 1rem;
+    opacity: 0;
+  }
+
+  to {
+    top: 2rem;
     opacity: 1;
   }
 }
