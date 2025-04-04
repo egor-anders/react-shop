@@ -4,7 +4,7 @@ import API_URL from '../config';
 import Products from '../components/Products';
 import Preloader from '../components/Preloader';
 import Cart from '../components/Cart';
-import CartContext from '../context/CartContext';
+import ShopContext from '../context/ShopContext';
 import CartList from '../components/CartList';
 import Alert from '../components/Alert';
 
@@ -100,15 +100,7 @@ function Shop() {
         {loading ? (
           <Preloader />
         ) : (
-          <CartContext.Provider
-            value={{
-              addToCart,
-              removeFromCart,
-              decreaseQuantity,
-              increaseQuantity,
-              openAlert
-            }}
-          >
+          <>
             {alertName && <Alert name={alertName} closeAlert={closeAlert} />}
             <Cart quantity={order.length} toggleShowCart={toggleShowCart} />
             <Products products={products} />
@@ -116,7 +108,7 @@ function Shop() {
             {showCart ? (
               <CartList order={order} toggleShowCart={toggleShowCart} />
             ) : null}
-          </CartContext.Provider>
+          </>
         )}
       </div>
     </main>
